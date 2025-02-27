@@ -1,0 +1,14 @@
+@use "sass:math";
+
+//colors
+$c-text: whitesmoke;
+
+// breakpoints
+$tablet-size:  768px;
+$desktop-size: 990px;
+
+// grid
+$max-container-width: 990px;
+$columns: 12;
+$column-base-width: math.div(100%, $columns);
+$gutter-width: 24px;

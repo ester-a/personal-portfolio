@@ -1,0 +1,155 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.switchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.switchButton:hover {
+  transform: scale(1.2);
+}
+
+.flag-icon {
+  width: 30px;
+  height: auto;
+  display: inline-block;
+}
+
+.mobile-menu {
+  width: 100%;
+  padding: 0 1.5rem;
+  display: block;
+
+  @include desktop {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    .logo {
+      color: white;
+      font-size: 1rem;
+
+      &:before {
+        content: "🚀"; 
+        font-size: 1rem;
+        margin-right: 1rem;
+      }  
+
+      @include tablet {
+        font-size: 1.1rem;
+      }
+
+      @include desktop {
+        font-size: 1.2rem;
+      }
+      
+    }
+
+    .menu-toggle {
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+
+  .menu-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #5a2c91;
+        }
+      }
+    }
+  }
+}
+
+.desktop-menu {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  width: 66%;
+
+  @include desktop {
+    display: flex;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1.25rem;
+    margin-right: 2rem;
+
+    ::before {
+      content: "🚀"; 
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 990px) and (max-width: 1460px) {
+      font-size: 0;
+    }
+  }
+}
+  .menu-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    li {
+      a {
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #5a2c91;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 990px) and (max-width: 1460px) {
+    .logo::before {
+      content: "🚀"; 
+      font-size: 1.5rem; 
+    }
+  }

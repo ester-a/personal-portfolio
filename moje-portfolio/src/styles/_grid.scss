@@ -1,0 +1,47 @@
+@use './variables' as *;
+@use './mixins' as *;
+// Grid 12 columns
+@use "sass:math";
+
+.container {
+    width: 100%;
+    max-width: $max-container-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="col-"] {
+    min-height: 1px;
+    padding: math.div($gutter-width, 2);
+}
+
+
+
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        width: $column-base-width * $i;
+    }
+}
+
+@include tablet {
+@for $i from 1 through $columns {
+    .col-md-#{$i} {
+        width: $column-base-width * $i;
+    }
+}
+
+}
+
+@include desktop {
+    @for $i from 1 through $columns {
+        .col-lg-#{$i} {
+            width: $column-base-width * $i;
+        }
+    }
+    
+}

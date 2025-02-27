@@ -1,0 +1,86 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap");
+
+.education {
+    padding-block: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .title-education {
+        margin-inline: auto;
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        font-size: 1.875rem;
+        text-align: center;
+        font-weight: bold;
+
+        @include desktop {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        }
+    }
+
+    .container-education {
+        max-width: $max-container-width;
+        margin: 0 auto;
+    }
+
+    .education-box {
+        margin-bottom: 1.5rem;
+        padding: 2.5rem;
+        text-align: left;
+
+        .degree {
+            font-size: 0.8rem;
+            font-weight: 300;
+
+            @include tablet {
+            font-size: 1rem;
+            font-weight: 400;  
+            }
+
+            @include desktop {
+            font-size: 1.25rem;
+            font-weight: 500;
+            }
+        }
+        .institution {
+            font-size: 0.8rem;
+
+            @include tablet {
+            font-size: 1rem; 
+            }
+    
+            @include desktop {
+            font-size: 1.25rem;
+            }
+        }
+        .duration {
+            font-size: 0.6rem;
+            color: #d6d3d1;
+
+            @include tablet {
+            font-size: 0.7rem; 
+            }
+        
+            @include desktop {
+            font-size: 0.875rem;
+            }
+        }
+        .description {
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+
+            @include tablet {
+            font-size: 1rem; 
+            }
+            
+            @include desktop {
+            font-size: 1.25rem; 
+            }
+        }
+    }
+}

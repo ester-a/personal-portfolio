@@ -1,0 +1,18 @@
+@use './variables' as *;
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+    font-family: "Lexend Giga", serif;
+    font-optical-sizing: auto;
+    color: $c-text;
+    // background: url(./assets/bg-space.jpg) center/cover;
+    background: linear-gradient(135deg, #2b0a47, #1e0043, #000000, #000000);
+    height: 100%;
+}

@@ -1,0 +1,119 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Satisfy&display=swap");
+
+#contact {
+  padding: 1rem;
+  margin: 0 auto;
+
+  @include desktop {
+    max-width: 75%;
+  }
+
+  h2 {
+    margin-block: 5rem;
+    margin-inline: auto;
+    font-size: 1.875rem;
+    text-align: center;
+    font-weight: bold;
+    color: whitesmoke;
+
+      @include desktop {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      }
+  }
+}
+
+form > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+}
+
+.name,
+.email,
+.textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  padding-block: 0.5rem;
+  
+}
+
+.name-input,
+.email-input,
+.textarea-box {
+  color: rgb(245, 245, 244);
+  width: 100%;
+  appearance: none;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(250, 250, 249, 0.3);
+  background-color: transparent;
+
+  margin-bottom: 2rem;
+  padding-inline: 0.75rem;
+  padding-block: 0.5rem;
+
+}
+
+
+.textarea-box {
+  height: 10em; 
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: rgb(244, 63, 94); 
+  display: block; 
+  margin-top: -0.5rem;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+    width: 100%; 
+    border-radius: 0.25rem; 
+    border: 1px solid rgba(69, 69, 69, 0.3); 
+    background: linear-gradient(to bottom, #6b7280, #374151); 
+    color: white; 
+    font-weight: 600; 
+    padding: 0.5rem 1rem; 
+    transition: background 0.5s ease, opacity 0.5s ease; 
+    cursor: not-allowed;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+
+    &.sending {
+      opacity: 0.5;
+    }
+  
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    @include desktop {
+      max-width: 30%;
+    }
+  
+}
+
+
+
+

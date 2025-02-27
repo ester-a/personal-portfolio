@@ -1,0 +1,27 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap");
+
+.footer {
+    width: 100%;
+    // padding: 1rem 0;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: #5a2c91;
+            }
+        }
+    }
+}

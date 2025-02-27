@@ -1,0 +1,149 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap");
+
+.space-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    // background: linear-gradient(135deg, #2b0a47, #1e0043, #000000, #000000);
+    overflow: hidden;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%);
+      opacity: 0.3;
+    }
+  
+    .stars {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: -400px 200px white,
+        100px 200px white, 200px 300px white, 400px 600px white, -50px -100px white,  -400px 200px white, -500px 350px white, -650px 600px white,
+        50px 500px white, 600px 200px white, 800px 700px white;
+      animation: twinkle 2s infinite alternate;
+    }
+  
+    @keyframes twinkle {
+      from {
+        opacity: 0.5;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    .shooting-star {
+      position: absolute;
+      top: 50%;
+      left: 80%;
+      width: 4px;
+      height: 4px;
+      background: white;
+      box-shadow: 0 0 10px white;
+      animation: shooting 3s infinite ease-in-out;
+    }
+  
+    @keyframes shooting {
+      from {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      to {
+        transform: translate(-300px, 200px);
+        opacity: 0;
+      }
+      
+    }
+  }
+
+  .shooting-star2 {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 4px;
+    height: 4px;
+    background: white;
+    box-shadow: 0 0 10px white;
+    animation: shooting 3s infinite ease-in-out;
+  }
+
+  @keyframes shooting {
+    from {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    to {
+      transform: translate(-300px, 200px);
+      opacity: 0;
+    }
+  }
+
+
+
+.bio {
+    display: flex;
+    max-width: 48rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 3rem;
+    padding-top: 5rem;
+    padding-inline: 0.7rem;
+
+    @include desktop {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+    .bio-title {
+        text-align: center;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: bold;
+
+        @include desktop {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+          }
+
+    }
+
+    .about-me {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+
+        @include desktop {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+          }
+    }
+}
+
+.bio-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .astronaut2 {
+    display: block;
+    width: 150px;
+
+    @include tablet {
+      width: 400px;
+    }
+    @include desktop {
+      width: 450px;
+    }
+  }
+}

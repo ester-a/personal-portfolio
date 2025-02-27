@@ -1,0 +1,98 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap");
+
+.hero {
+  background: url("../assets/bg-space.jpg") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .introduction {
+    flex: 1;
+    max-width: 500px;
+    font-size: 1rem;
+    font-weight: bold;
+
+    @include tablet {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    @include desktop {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .highlight {
+    font-size: 1rem;
+    font-weight: bold;
+
+    @include tablet {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .welcome-text {
+    margin-block: 10px;
+    font-size: 0.7rem;
+
+    @include tablet {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+    @include desktop {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; // zajistí responzivitu
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // dvě stejné části
+    gap: 20px;
+  }
+  @include desktop {
+    max-width: $max-container-width;
+  }
+}
+
+// Astronaut image animation
+.astronaut {
+  width: 300px;
+  animation: float 5s infinite ease-in-out;
+
+  @include tablet {
+    width: 550px;
+  }
+
+  @include desktop {
+    width: 600px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

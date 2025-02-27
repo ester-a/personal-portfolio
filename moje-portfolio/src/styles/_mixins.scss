@@ -1,0 +1,14 @@
+@use './variables' as *;
+
+//responsive mixins
+@mixin tablet {
+    @media (min-width: $tablet-size) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-size) {
+        @content;
+    }
+}
